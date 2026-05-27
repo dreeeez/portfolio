@@ -36,7 +36,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 text-balance bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-6xl leading-[1.02] text-transparent md:text-8xl"
+          className="mt-6 whitespace-nowrap bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-3xl leading-[1.02] text-transparent sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
         >
           {t("name")}
         </motion.h1>

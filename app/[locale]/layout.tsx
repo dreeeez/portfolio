@@ -29,8 +29,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Marco Schneider — Portfolio",
-    template: "%s · Marco Schneider",
+    default: "MS — Portfolio",
+    template: "%s · MS",
   },
   description:
     "Marco Schneider — Business Informatics student at Stuttgart Media University. Software, UI/UX and design.",
