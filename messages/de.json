@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "projects": "Projekte",
+    "now": "Aktuell",
+    "contact": "Kontakt",
+    "resume": "Lebenslauf"
+  },
+  "hero": {
+    "name": "Marco Schneider",
+    "role": "Werkstudent @ Mercedes-Benz · Data · KI · Web · UX",
+    "tagline": "Werkstudent im Data Management bei Mercedes-Benz und Wirtschaftsinformatik-Student an der HdM Stuttgart — mit Hands-on-Erfahrung in Webentwicklung, UX und IT-Support, und einer Faszination für KI, LLMs und Business Intelligence.",
+    "bodyP1": "Hi, ich bin Marco — Wirtschaftsinformatik-Student an der Hochschule der Medien Stuttgart.",
+    "bodyP2": "Ich entdecke gerne neue Systeme, teste die Grenzen aktueller Tools aus und entwickle daraus Dinge mit echtem Mehrwert. Mich packen oft ganz unterschiedliche Themen — und wenn etwas mein Interesse weckt, tauche ich meistens direkt selbst darin ein.",
+    "bodyP3": "Seit mehreren Jahren engagiere ich mich ehrenamtlich in der Kinder- und Jugendarbeit. Ein Teil davon ist das Media-Team der <dcg>DCG Deutschland</dcg>, in dem ich als Hobby mitwirke.",
+    "bodyP4": "Privat pendle ich oft zwischen Deutschland und Norwegen, das sich inzwischen wie eine zweite Heimat anfühlt.",
+    "bodyP5": "Abseits vom Bildschirm habe ich Gaming gegen Laufen getauscht. Was mich runterbringt: frische Luft, der Fahrtwind beim Rollerfahren und gute Leute um mich herum.",
+    "ctaProjects": "Projekte ansehen",
+    "ctaContact": "Kontakt aufnehmen"
+  },
+  "about": {
+    "title": "Über mich",
+    "kicker": "Ein bisschen Kontext",
+    "stats": {
+      "yearsLabel": "Jahre Coding",
+      "projectsLabel": "Projekte umgesetzt",
+      "stackLabel": "Lieblings-Stacks"
+    }
+  },
+  "skills": {
+    "title": "Skills & Tools",
+    "kicker": "Womit ich arbeite",
+    "categories": {
+      "dev": "Development",
+      "data": "Data & Business IT",
+      "design": "Design & Media",
+      "ai": "AI & Workflow",
+      "ops": "IT & Ops"
+    }
+  },
+  "projects": {
+    "title": "Ausgewählte Projekte",
+    "kicker": "Showcase",
+    "viewProject": "Projekt ansehen",
+    "categories": {
+      "software": "Software Development",
+      "data": "Data & Analytics",
+      "animation": "3D & Animation",
+      "media": "Media",
+      "graphics": "Grafik Design",
+      "design": "Design"
+    }
+  },
+  "now": {
+    "title": "Aktuell",
+    "kicker": "Ein Schnappschuss",
+    "bodyP1": "Ich studiere Wirtschaftsinformatik (B.Sc.) an der Hochschule der Medien Stuttgart und absolviere derzeit ein sechsmonatiges Praktikum im Data Management bei Mercedes-Benz. Dabei geht es mir vor allem darum, in einem spannenden Umfeld viel mitzunehmen und praktische Erfahrung im Umgang mit Datenstrukturen und Prozessen zu sammeln. Besonders interessant ist für mich dabei auch der Einblick in einen großen Konzern, nachdem ich zuvor im Startup-Umfeld tätig war.",
+    "bodyP2": "Besonders fasziniert mich aktuell, wie KI immer leistungsfähiger wird — und wie viel Potenzial darin steckt, mich in Richtung \"AI Enabler\" zu entwickeln, also die Brücke zwischen Technologie, Prozessen und Menschen zu schlagen.",
+    "bodyP3": "Abseits davon laufe ich aktuell Halbmarathons und habe mir als langfristiges Ziel einen Sub-3-Stunden-Marathon gesetzt. Nebenbei spiele ich für mich selbst Gitarre.",
+    "lastUpdated": "Zuletzt aktualisiert"
+  },
+  "timeline": {
+    "title": "Werdegang",
+    "kicker": "Stationen"
+  },
+  "contact": {
+    "title": "Lass uns reden",
+    "kicker": "Kontakt",
+    "subtitle": "Offen für Praktika, Freelance-Projekte oder einfach ein gutes Gespräch über Tech und Design.",
+    "emailButton": "E-Mail senden",
+    "linkedinButton": "LinkedIn",
+    "downloadCv": "CV herunterladen (PDF)",
+    "cvHint": "Für einen kompletten Überblick über meine Erfahrung und Qualifikationen kannst du meinen Lebenslauf herunterladen."
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "built": "Gebaut mit Next.js & Tailwind."
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "now": "Now",
+    "contact": "Contact",
+    "resume": "Resume"
+  },
+  "hero": {
+    "name": "Marco Schneider",
+    "role": "Working Student @ Mercedes-Benz · Data · AI · Web · UX",
+    "tagline": "Working Student in Data Management at Mercedes-Benz and Business Informatics student at HdM Stuttgart — hands-on experience in web development, UX, and IT support, with a fascination for AI, LLMs, and Business Intelligence.",
+    "bodyP1": "Hi, I'm Marco — a Business Informatics student at Stuttgart Media University (HdM).",
+    "bodyP2": "I like exploring new systems, pushing the limits of current tools and turning them into something with real value. All sorts of topics tend to grab me — when something catches my interest, I usually just dive in and teach myself.",
+    "bodyP3": "For several years I've been volunteering in youth and children's ministry. Part of that is the <dcg>DCG Germany</dcg> media team, where I contribute as a hobby.",
+    "bodyP4": "Privately I shuttle between Germany and Norway — which has come to feel like a second home.",
+    "bodyP5": "Off the screen I've traded gaming for running. What keeps me grounded: fresh air, the wind on a scooter ride and good people around me.",
+    "ctaProjects": "See Projects",
+    "ctaContact": "Get in Touch"
+  },
+  "about": {
+    "title": "About me",
+    "kicker": "A little context",
+    "stats": {
+      "yearsLabel": "Years coding",
+      "projectsLabel": "Projects shipped",
+      "stackLabel": "Tech I love"
+    }
+  },
+  "skills": {
+    "title": "Skills & Tools",
+    "kicker": "What I work with",
+    "categories": {
+      "dev": "Development",
+      "data": "Data & Business IT",
+      "design": "Design & Media",
+      "ai": "AI & Workflow",
+      "ops": "IT & Ops"
+    }
+  },
+  "projects": {
+    "title": "Selected Projects",
+    "kicker": "Showcase",
+    "viewProject": "View project",
+    "categories": {
+      "software": "Software Development",
+      "data": "Data & Analytics",
+      "animation": "3D & Animation",
+      "media": "Media",
+      "graphics": "Graphic Design",
+      "design": "Design"
+    }
+  },
+  "now": {
+    "title": "Now",
+    "kicker": "A snapshot",
+    "bodyP1": "I'm studying Business Informatics (B.Sc.) at Stuttgart Media University and currently doing a six-month Data Management internship at Mercedes-Benz. My main goal: soak up as much as possible in a genuinely interesting environment and build hands-on experience with data structures and processes. What I find particularly interesting is getting a look inside a large corporation after previously working in a startup setting.",
+    "bodyP2": "What fascinates me most right now is how capable AI keeps getting — and how much potential there is in growing into an \"AI enabler\" role: building the bridge between technology, processes and people.",
+    "bodyP3": "On the side I'm running half marathons, with a long-term goal of a sub-3-hour marathon. And I'm slowly working through guitar for myself.",
+    "lastUpdated": "Last updated"
+  },
+  "timeline": {
+    "title": "Journey",
+    "kicker": "Where I've been"
+  },
+  "contact": {
+    "title": "Let's talk",
+    "kicker": "Get in touch",
+    "subtitle": "Open for internships, freelance work, or just a good chat about tech and design.",
+    "emailButton": "Send email",
+    "linkedinButton": "LinkedIn",
+    "downloadCv": "Download CV (PDF)",
+    "cvHint": "For a complete overview of my experience and qualifications, you can download my CV."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "built": "Built with Next.js & Tailwind."
+  }
+}

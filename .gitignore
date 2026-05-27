@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large video files (hosted via Vercel Blob in production)
+public/videos/*.mp4
