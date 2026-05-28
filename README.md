@@ -1,5 +1,7 @@
 # marcoandres.dev — Portfolio
 
+![Portfolio cover](docs/cover.jpg)
+
 Personal portfolio site of Marco Schneider — Business Informatics student at HdM Stuttgart and Working Student in Data Management at Mercedes-Benz.
 
 **Live:** [marcoandres.dev](https://marcoandres.dev)
