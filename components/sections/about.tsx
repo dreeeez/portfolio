@@ -36,7 +36,6 @@ export function About() {
                 ),
               })}
             </p>
-            <p>{tHero("bodyP4")}</p>
             <p>{tHero("bodyP5")}</p>
           </Reveal>
 

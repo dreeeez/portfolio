@@ -10,9 +10,8 @@
     "role": "Working Student @ Mercedes-Benz · Data · AI · Web · UX",
     "tagline": "Working Student in Data Management at Mercedes-Benz and Business Informatics student at HdM Stuttgart — hands-on experience in web development, UX, and IT support, with a fascination for AI, LLMs, and Business Intelligence.",
     "bodyP1": "Hi, I'm Marco — a Business Informatics student at Stuttgart Media University (HdM).",
-    "bodyP2": "I like exploring new systems, pushing the limits of current tools and turning them into something with real value. All sorts of topics tend to grab me — when something catches my interest, I usually just dive in and teach myself.",
+    "bodyP2": "What I love most is exploring new systems, seeing what tools can really do and building something that's actually useful. Learning is just part of who I am — I enjoy working at the intersection of different disciplines and tend to pick up new topics on my own.",
     "bodyP3": "For several years I've been volunteering in youth and children's ministry. Part of that is the <dcg>DCG Germany</dcg> media team, where I contribute as a hobby.",
-    "bodyP4": "Privately I shuttle between Germany and Norway — which has come to feel like a second home.",
     "bodyP5": "Off the screen I've traded gaming for running. What keeps me grounded: fresh air, the wind on a scooter ride and good people around me.",
     "ctaProjects": "See Projects",
     "ctaContact": "Get in Touch"
@@ -28,13 +27,13 @@
   },
   "skills": {
     "title": "Skills & Tools",
-    "kicker": "What I work with",
+    "kicker": "What I bring to the table",
     "categories": {
-      "dev": "Development",
-      "data": "Data & Business IT",
-      "design": "Design & Media",
-      "ai": "AI & Workflow",
-      "ops": "IT & Ops"
+      "dev": "Software Development",
+      "data": "Data & Analytics",
+      "design": "Design & Creative",
+      "ai": "AI Tools",
+      "ops": "IT & Infrastructure"
     }
   },
   "projects": {

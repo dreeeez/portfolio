@@ -10,9 +10,8 @@
     "role": "Werkstudent @ Mercedes-Benz · Data · KI · Web · UX",
     "tagline": "Werkstudent im Data Management bei Mercedes-Benz und Wirtschaftsinformatik-Student an der HdM Stuttgart — mit Hands-on-Erfahrung in Webentwicklung, UX und IT-Support, und einer Faszination für KI, LLMs und Business Intelligence.",
     "bodyP1": "Hi, ich bin Marco — Wirtschaftsinformatik-Student an der Hochschule der Medien Stuttgart.",
-    "bodyP2": "Ich entdecke gerne neue Systeme, teste die Grenzen aktueller Tools aus und entwickle daraus Dinge mit echtem Mehrwert. Mich packen oft ganz unterschiedliche Themen — und wenn etwas mein Interesse weckt, tauche ich meistens direkt selbst darin ein.",
+    "bodyP2": "Am liebsten erkunde ich neue Systeme, teste was Tools draufhaben und baue daraus etwas, das wirklich nützt. Lernfreude gehört bei mir einfach dazu — ich arbeite gerne an der Schnittstelle verschiedener Disziplinen und eigne mir neue Themen meistens selbst an.",
     "bodyP3": "Seit mehreren Jahren engagiere ich mich ehrenamtlich in der Kinder- und Jugendarbeit. Ein Teil davon ist das Media-Team der <dcg>DCG Deutschland</dcg>, in dem ich als Hobby mitwirke.",
-    "bodyP4": "Privat pendle ich oft zwischen Deutschland und Norwegen, das sich inzwischen wie eine zweite Heimat anfühlt.",
     "bodyP5": "Abseits vom Bildschirm habe ich Gaming gegen Laufen getauscht. Was mich runterbringt: frische Luft, der Fahrtwind beim Rollerfahren und gute Leute um mich herum.",
     "ctaProjects": "Projekte ansehen",
     "ctaContact": "Kontakt aufnehmen"
@@ -28,13 +27,13 @@
   },
   "skills": {
     "title": "Skills & Tools",
-    "kicker": "Womit ich arbeite",
+    "kicker": "Was ich mitbringe",
     "categories": {
-      "dev": "Development",
-      "data": "Data & Business IT",
-      "design": "Design & Media",
-      "ai": "AI & Workflow",
-      "ops": "IT & Ops"
+      "dev": "Software Development",
+      "data": "Data & Analytics",
+      "design": "Design & Creative",
+      "ai": "AI Tools",
+      "ops": "IT & Infrastructure"
     }
   },
   "projects": {

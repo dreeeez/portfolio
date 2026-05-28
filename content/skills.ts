@@ -32,9 +32,9 @@ export const skillCategories: SkillCategory[] = [
       "HTML / CSS",
       "Git",
       "Supabase",
+      "Vercel",
       "WordPress",
       "Elementor",
-      "SEO",
     ],
   },
   {
@@ -72,7 +72,6 @@ export const skillCategories: SkillCategory[] = [
       "Unreal Engine",
       "UI / UX",
       "Prototyping",
-      "Google Ads",
     ],
   },
   {
@@ -89,9 +88,8 @@ export const skillCategories: SkillCategory[] = [
       "MCP",
       "Midjourney",
       "Runway",
+      "Google Flow",
       "ElevenLabs",
-      "Vercel",
-      "Notion",
     ],
   },
   {
