@@ -40,7 +40,7 @@ export default async function DataDashboardPage({
           <h1 className="text-4xl leading-[1.05] md:text-5xl">
             {project.title}
           </h1>
-          <GithubLink locale={loc} repo="Sopra_Benchmark_18" compact />
+          <GithubLink locale={loc} repo="retail-benchmark-dashboard" compact />
         </header>
 
         <dl className="mt-6 grid grid-cols-2 gap-x-10 gap-y-5 border-b border-border/60 pb-6 font-sans not-italic sm:grid-cols-3 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto]">
@@ -232,7 +232,7 @@ export default async function DataDashboardPage({
         </section>
 
         <div className="mt-16 flex flex-wrap items-center justify-between gap-6 border-t border-border/60 pt-8">
-          <GithubLink locale={loc} repo="Sopra_Benchmark_18" />
+          <GithubLink locale={loc} repo="retail-benchmark-dashboard" />
 
           <Link
             href="/#projects"

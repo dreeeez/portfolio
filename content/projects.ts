@@ -119,7 +119,7 @@ export const projects: Project[] = [
     },
     tags: ["Python", "SQL Server", "Pandas", "Plotly", "Streamlit", "Jupyter"],
     year: "2026",
-    github: "https://github.com/dreeeez/Sopra_Benchmark_18",
+    github: "https://github.com/dreeeez/retail-benchmark-dashboard",
     icon: "streamlit",
     image: "/thumbnails/data-dashboard.png",
     subpage: true,
