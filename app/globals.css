@@ -168,6 +168,16 @@
     opacity: 1;
     transform: none;
   }
+  /* On touch devices there's no cursor to drive the reveal mask in
+     the InfiniteGrid hero — drop the mask and show the layer at a
+     subtle static opacity instead. */
+  @media (hover: none) {
+    .cursor-mask {
+      mask-image: none !important;
+      -webkit-mask-image: none !important;
+      opacity: 0.08 !important;
+    }
+  }
   /* Forces light-theme variables inside a single section, regardless of
      whether the page is in dark mode. Use to break up the page rhythm
      with a contrasting light surface. */

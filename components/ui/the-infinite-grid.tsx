@@ -86,6 +86,19 @@ export function InfiniteGrid({
   const containerRef = React.useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { margin: "0px" });
 
+  // Touch devices have no cursor to drive the reveal mask. Skip the
+  // per-frame offset shift entirely so we don't burn main thread time
+  // animating something the user can't see.
+  const [isHoverDevice, setIsHoverDevice] = React.useState(false);
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(hover: hover)");
+    setIsHoverDevice(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setIsHoverDevice(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
   const mouseX = useMotionValue(-9999);
   const mouseY = useMotionValue(-9999);
 
@@ -93,7 +106,11 @@ export function InfiniteGrid({
   const offsetY = useMotionValue(0);
 
   useAnimationFrame(() => {
-    if (!isInView || (typeof document !== "undefined" && document.hidden)) {
+    if (
+      !isHoverDevice ||
+      !isInView ||
+      (typeof document !== "undefined" && document.hidden)
+    ) {
       return;
     }
     offsetX.set((offsetX.get() + SPEED_X) % TILE_W);
@@ -101,6 +118,7 @@ export function InfiniteGrid({
   });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isHoverDevice) return;
     if (typeof document !== "undefined" && document.hidden) return;
     const { left, top } = e.currentTarget.getBoundingClientRect();
     mouseX.set(e.clientX - left);
@@ -120,18 +138,19 @@ export function InfiniteGrid({
         className,
       )}
     >
-      {/* Cursor-revealed grid lines — subtle, behind the logos. */}
+      {/* Cursor-revealed grid lines on hover devices; subtle static layer
+          on touch devices (handled in globals.css via @media hover: none). */}
       <motion.div
-        className="pointer-events-none absolute inset-0 z-0 text-foreground opacity-30 dark:opacity-40"
+        className="cursor-mask pointer-events-none absolute inset-0 z-0 text-foreground opacity-30 dark:opacity-40"
         style={{ maskImage, WebkitMaskImage: maskImage }}
       >
         <GridPattern offsetX={offsetX} offsetY={offsetY} />
       </motion.div>
 
-      {/* Cursor-revealed grid of logos — monochrome, masked to a soft disc.
-          No always-on layer: logos are visible only near the cursor. */}
+      {/* Cursor-revealed logo grid on hover devices; subtle static layer
+          on touch devices (handled in globals.css via @media hover: none). */}
       <motion.div
-        className="pointer-events-none absolute inset-0 z-0 brightness-0 dark:invert dark:sepia dark:hue-rotate-[200deg] dark:saturate-[5] dark:opacity-30 dark:blur-[0.5px] dark:drop-shadow-[0_0_32px_rgba(37,99,235,1)]"
+        className="cursor-mask pointer-events-none absolute inset-0 z-0 brightness-0 dark:invert dark:sepia dark:hue-rotate-[200deg] dark:saturate-[5] dark:opacity-30 dark:blur-[0.5px] dark:drop-shadow-[0_0_32px_rgba(37,99,235,1)]"
         style={{ maskImage, WebkitMaskImage: maskImage }}
       >
         <LogoPattern offsetX={offsetX} offsetY={offsetY} />
