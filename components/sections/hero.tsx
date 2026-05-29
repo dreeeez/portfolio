@@ -8,7 +8,7 @@ import { InfiniteGrid } from "@/components/ui/the-infinite-grid";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const DISCIPLINES = ["Software", "UI / UX", "Design", "Data"];
+const DISCIPLINES = ["Software", "AI", "People", "Data", "UX/UI"];
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -88,7 +88,7 @@ function PortraitAvatar({ alt }: { alt: string }) {
 
       {/* thin gradient ring */}
       <div className="relative rounded-full bg-gradient-to-br from-white/50 via-white/10 to-transparent p-[1.5px] shadow-[0_18px_40px_-12px_rgba(0,0,0,0.5)] dark:from-white/25 dark:via-white/5">
-        <div className="relative h-36 w-36 overflow-hidden rounded-full border border-border/40 bg-card/40 backdrop-blur-sm md:h-44 md:w-44 lg:h-52 lg:w-52 xl:h-60 xl:w-60 2xl:h-72 2xl:w-72">
+        <div className="relative h-24 w-24 overflow-hidden rounded-full border border-border/40 bg-card/40 backdrop-blur-sm md:h-44 md:w-44 lg:h-52 lg:w-52 xl:h-60 xl:w-60 2xl:h-72 2xl:w-72">
           <Image
             src="/marco-portrait.jpg"
             alt={alt}
@@ -96,7 +96,9 @@ function PortraitAvatar({ alt }: { alt: string }) {
             height={400}
             priority
             fetchPriority="high"
-            sizes="(min-width: 1536px) 18rem, (min-width: 1280px) 15rem, (min-width: 1024px) 13rem, (min-width: 768px) 11rem, 9rem"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAKAAoDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAwQFBv/EACIQAAIBAwIHAAAAAAAAAAAAAAECAAQFESExAxQiNEGy0f/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oADAMBAAIRAxEAPwAFpfiPTmnQN1kgLnRzFzYrkCRy2ceQ6/ZSoQA9twB27e00+2g2khK6X//Z"
+            sizes="(min-width: 1536px) 18rem, (min-width: 1280px) 15rem, (min-width: 1024px) 13rem, (min-width: 768px) 11rem, 6rem"
             className="h-full w-full object-cover object-[center_28%]"
           />
         </div>
