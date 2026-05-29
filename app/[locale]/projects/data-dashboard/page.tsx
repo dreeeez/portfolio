@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 
 import { GithubLink } from "@/components/shared/github-link";
@@ -50,46 +51,51 @@ export default async function DataDashboardPage({
             </dt>
             <dd className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-foreground">
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/python_logo.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Python
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/sql_logo.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 MS SQL Server
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/pandas.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Pandas
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/plotly.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Plotly
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/streamlit.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Streamlit
@@ -139,10 +145,11 @@ export default async function DataDashboardPage({
         {project.image && (
           <figure className="mt-4">
             <div className="overflow-hidden rounded-2xl border border-border/60 bg-neutral-950">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
+                width={1600}
+                height={831}
                 className="h-auto w-full object-cover"
               />
             </div>
@@ -156,14 +163,15 @@ export default async function DataDashboardPage({
 
           <figure className="mt-4">
             <div className="overflow-hidden rounded-2xl border border-border/60 bg-neutral-950">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/thumbnails/data-dashboard-architecture.png"
                 alt={
                   loc === "de"
                     ? "Systemarchitektur — Client/Browser, Streamlit-App, Data-Access und Microsoft SQL Server"
                     : "System architecture — client/browser, Streamlit app, data access and Microsoft SQL Server"
                 }
+                width={1131}
+                height={877}
                 className="block h-auto w-full object-contain"
               />
             </div>

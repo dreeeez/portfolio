@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
@@ -54,28 +55,31 @@ export default async function GraphicsPage({
             </dt>
             <dd className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-foreground">
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/indesign.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 InDesign
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/figma.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Figma
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/ps.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Photoshop
@@ -125,14 +129,14 @@ export default async function GraphicsPage({
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             {ecorizeItems.map((item) => (
               <figure key={item.slug}>
-                <div className="overflow-hidden rounded-xl border border-border/60 bg-card/30">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border/60 bg-card/30">
                   {item.image && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
-                      loading="lazy"
-                      className="aspect-[4/3] h-auto w-full object-contain p-4"
+                      fill
+                      sizes="(min-width: 640px) 50vw, 100vw"
+                      className="object-contain p-4"
                     />
                   )}
                 </div>
@@ -168,14 +172,15 @@ export default async function GraphicsPage({
 
           <figure className="mt-6">
             <div className="overflow-hidden rounded-xl border border-border/60 bg-card/30">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/graphics/ecorize-heropage.png"
                 alt={
                   loc === "de"
                     ? "ecorize Heropage — Konzept-Draft"
                     : "ecorize hero page — concept draft"
                 }
+                width={1698}
+                height={902}
                 loading="lazy"
                 className="h-auto w-full object-contain"
               />
@@ -208,14 +213,15 @@ export default async function GraphicsPage({
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             {otherItems.map((item) => (
               <figure key={item.slug}>
-                <div className="overflow-hidden rounded-xl border border-border/60 bg-card/30">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border/60 bg-card/30">
                   {item.image && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
+                      fill
+                      sizes="(min-width: 640px) 50vw, 100vw"
                       loading="lazy"
-                      className="aspect-[4/3] h-auto w-full object-contain p-4"
+                      className="object-contain p-4"
                     />
                   )}
                 </div>

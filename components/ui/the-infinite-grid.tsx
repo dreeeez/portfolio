@@ -4,6 +4,7 @@ import * as React from "react";
 import {
   motion,
   useAnimationFrame,
+  useInView,
   useMotionTemplate,
   useMotionValue,
 } from "framer-motion";
@@ -28,36 +29,36 @@ const REVEAL_RADIUS = 380;
 const GRID_CELL = 40;
 
 const LOGOS = [
-  "/logos/ts_white.png",
-  "/logos/react_logo.png",
-  "/logos/nextjs.webp",
-  "/logos/tailwind.png",
-  "/logos/html_logo_white.png",
-  "/logos/css_logo_white.png",
-  "/logos/vs_code.png",
-  "/logos/python_logo.png",
-  "/logos/sql_logo.png",
-  "/logos/pandas.png",
-  "/logos/plotly.png",
-  "/logos/streamlit.png",
-  "/logos/supabase.webp",
-  "/logos/vercel.png",
-  "/logos/git_logo.png",
-  "/logos/figma.png",
-  "/logos/ps_white.png",
-  "/logos/ae_white.png",
-  "/logos/indesign_white.png",
-  "/logos/blender.png",
-  "/logos/unreal_white.webp",
-  "/logos/davinci_white.png",
-  "/logos/capcut.png",
-  "/logos/PowerBI.png",
-  "/logos/sap_white.png",
-  "/logos/databricks.png",
-  "/logos/claude_logo.png",
-  "/logos/Midjourney%20logo.png",
-  "/logos/runway_logo_white.png",
-  "/logos/11logo_white.png",
+  "/logos/_grid/ts_white.webp",
+  "/logos/_grid/react_logo.webp",
+  "/logos/_grid/nextjs.webp",
+  "/logos/_grid/tailwind.webp",
+  "/logos/_grid/html_logo_white.webp",
+  "/logos/_grid/css_logo_white.webp",
+  "/logos/_grid/vs_code.webp",
+  "/logos/_grid/python_logo.webp",
+  "/logos/_grid/sql_logo.webp",
+  "/logos/_grid/pandas.webp",
+  "/logos/_grid/plotly.webp",
+  "/logos/_grid/streamlit.webp",
+  "/logos/_grid/supabase.webp",
+  "/logos/_grid/vercel.webp",
+  "/logos/_grid/git_logo.webp",
+  "/logos/_grid/figma.webp",
+  "/logos/_grid/ps_white.webp",
+  "/logos/_grid/ae_white.webp",
+  "/logos/_grid/indesign_white.webp",
+  "/logos/_grid/blender.webp",
+  "/logos/_grid/unreal_white.webp",
+  "/logos/_grid/davinci_white.webp",
+  "/logos/_grid/capcut.webp",
+  "/logos/_grid/PowerBI.webp",
+  "/logos/_grid/sap_white.webp",
+  "/logos/_grid/databricks.webp",
+  "/logos/_grid/claude_logo.webp",
+  "/logos/_grid/Midjourney%20logo.webp",
+  "/logos/_grid/runway_logo_white.webp",
+  "/logos/_grid/11logo_white.webp",
 ];
 
 type Placement = { x: number; y: number; src: string };
@@ -82,6 +83,9 @@ export function InfiniteGrid({
   className,
   showOrbs = true,
 }: InfiniteGridProps) {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { margin: "0px" });
+
   const mouseX = useMotionValue(-9999);
   const mouseY = useMotionValue(-9999);
 
@@ -89,11 +93,15 @@ export function InfiniteGrid({
   const offsetY = useMotionValue(0);
 
   useAnimationFrame(() => {
+    if (!isInView || (typeof document !== "undefined" && document.hidden)) {
+      return;
+    }
     offsetX.set((offsetX.get() + SPEED_X) % TILE_W);
     offsetY.set((offsetY.get() + SPEED_Y) % TILE_H);
   });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (typeof document !== "undefined" && document.hidden) return;
     const { left, top } = e.currentTarget.getBoundingClientRect();
     mouseX.set(e.clientX - left);
     mouseY.set(e.clientY - top);
@@ -105,6 +113,7 @@ export function InfiniteGrid({
 
   return (
     <div
+      ref={containerRef}
       onMouseMove={handleMouseMove}
       className={cn(
         "relative w-full overflow-hidden bg-background noise",

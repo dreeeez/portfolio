@@ -1,31 +1,40 @@
 "use client";
 
-import { motion, type MotionProps } from "framer-motion";
+import * as React from "react";
 import { cn } from "@/lib/utils";
 
-type RevealProps = MotionProps & {
+type RevealProps = {
   className?: string;
   delay?: number;
   children: React.ReactNode;
-  as?: "div" | "section" | "article" | "header" | "footer";
 };
 
-export function Reveal({
-  children,
-  className,
-  delay = 0,
-  ...rest
-}: RevealProps) {
+export function Reveal({ children, className, delay = 0 }: RevealProps) {
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.dataset.revealed = "true";
+          io.disconnect();
+        }
+      },
+      { rootMargin: "-80px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
-      className={cn(className)}
-      {...rest}
+    <div
+      ref={ref}
+      className={cn("reveal", className)}
+      style={delay ? { transitionDelay: `${delay}s` } : undefined}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

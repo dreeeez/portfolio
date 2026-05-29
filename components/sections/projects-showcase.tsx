@@ -3,9 +3,11 @@
 import * as React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import { videoUrl } from "@/lib/media";
+import { useVisibleVideo } from "@/lib/use-visible-video";
 import { Link } from "@/i18n/navigation";
 import {
   GithubIcon,
@@ -16,9 +18,11 @@ import { type Project, type ProjectIcon } from "@/content/projects";
 
 function StreamlitLogo({ className }: { className?: string }) {
   return (
-    <img
+    <Image
       src="/logos/streamlit.png"
       alt="Streamlit"
+      width={48}
+      height={48}
       className={cn("object-contain", className)}
     />
   );
@@ -174,9 +178,11 @@ export function ProjectsShowcase({ projects, locale }: ShowcaseProps) {
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex min-w-0 items-center gap-2.5">
                       {project.iconImage ? (
-                        <img
+                        <Image
                           src={project.iconImage}
                           alt=""
+                          width={14}
+                          height={14}
                           className="h-3.5 w-3.5 shrink-0 object-contain"
                         />
                       ) : project.icon ? (
@@ -328,12 +334,7 @@ function StageInner({
 
 function StageMedia({ project }: { project: Project }) {
   const [imageFailed, setImageFailed] = React.useState(false);
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-
-  React.useEffect(() => {
-    const el = videoRef.current;
-    if (el) el.play().catch(() => {});
-  }, []);
+  const videoRef = useVisibleVideo<HTMLVideoElement>();
 
   if (project.video) {
     return (
@@ -344,8 +345,7 @@ function StageMedia({ project }: { project: Project }) {
         muted
         loop
         playsInline
-        autoPlay
-        preload="metadata"
+        preload="none"
         className="absolute inset-0 h-full w-full object-cover"
       />
     );
@@ -359,12 +359,18 @@ function StageMedia({ project }: { project: Project }) {
           <div className="absolute left-[72%] top-1/2 h-[70%] w-[45%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/30 blur-3xl" />
         </div>
         {project.images.map((src, idx) => (
-          <img
+          <div
             key={src}
-            src={src}
-            alt={`${project.title} preview ${idx + 1}`}
-            className="relative h-full min-w-0 flex-1 rounded-lg object-contain"
-          />
+            className="relative h-full min-w-0 flex-1 overflow-hidden rounded-lg"
+          >
+            <Image
+              src={src}
+              alt={`${project.title} preview ${idx + 1}`}
+              fill
+              sizes="(min-width: 1024px) 512px, 50vw"
+              className="object-contain"
+            />
+          </div>
         ))}
       </div>
     );
@@ -372,11 +378,13 @@ function StageMedia({ project }: { project: Project }) {
 
   if (project.image && !imageFailed) {
     return (
-      <img
+      <Image
         src={project.image}
         alt={`${project.title} preview`}
         onError={() => setImageFailed(true)}
-        className="absolute inset-0 h-full w-full object-cover [object-position:center_-200%]"
+        fill
+        sizes="(min-width: 1024px) 1024px, 100vw"
+        className="object-cover [object-position:center_-200%]"
       />
     );
   }
@@ -394,9 +402,11 @@ function StageMedia({ project }: { project: Project }) {
       )}
     >
       {project.iconImage ? (
-        <img
+        <Image
           src={project.iconImage}
           alt={`${project.title} logo`}
+          width={112}
+          height={112}
           className="h-28 w-28 object-contain"
         />
       ) : Icon ? (

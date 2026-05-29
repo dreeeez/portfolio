@@ -3,9 +3,11 @@
 import * as React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import { videoUrl } from "@/lib/media";
+import { useVisibleVideo } from "@/lib/use-visible-video";
 import { Link } from "@/i18n/navigation";
 
 type VideoCardProps = {
@@ -34,15 +36,8 @@ export function VideoCard({
   image,
   fit = "cover",
 }: VideoCardProps) {
-  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const videoRef = useVisibleVideo<HTMLVideoElement>();
   const [isHovered, setIsHovered] = React.useState(false);
-
-  React.useEffect(() => {
-    const el = videoRef.current;
-    if (el) {
-      el.play().catch(() => {});
-    }
-  }, []);
 
   const hasLink = Boolean(subpageHref || href);
   const Wrapper: React.ElementType = subpageHref
@@ -73,8 +68,7 @@ export function VideoCard({
             muted
             loop
             playsInline
-            autoPlay
-            preload="metadata"
+            preload="none"
             className={cn(
               "absolute inset-0 h-full w-full object-cover transition-all duration-700",
               isHovered
@@ -83,13 +77,13 @@ export function VideoCard({
             )}
           />
         ) : image ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={image}
             alt={title}
-            loading="lazy"
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             className={cn(
-              "absolute inset-0 h-full w-full transition-all duration-700",
+              "transition-all duration-700",
               fit === "contain" ? "object-contain object-top p-6" : "object-cover",
               isHovered
                 ? "scale-105 opacity-90 brightness-100"

@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
@@ -49,56 +50,62 @@ export default async function CharacterAnimationPage({
             </dt>
             <dd className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-foreground">
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/unreal_white.webp"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Unreal Engine 5
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/blender.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Blender
               </span>
               <span>Auto-Rig Pro</span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/superhive.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Superhive
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/quickmagic-quickmagic.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 QuickMagic AI
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/artlist.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Artlist
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/envato.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Envato

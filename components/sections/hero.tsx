@@ -19,33 +19,27 @@ export function Hero() {
       <div className="mx-auto flex w-full max-w-3xl flex-col items-center px-4 py-6 text-center sm:px-6 lg:px-8">
         <PortraitAvatar alt={t("name")} />
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-8 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/40 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur-sm"
+        <div
+          className="hero-fade-up mt-8 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/40 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur-sm"
+          style={{ animationDelay: "0.25s" }}
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inset-0 animate-ping rounded-full bg-emerald-500/60" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
           </span>
           {t("role")}
-        </motion.div>
+        </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 whitespace-nowrap bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-3xl leading-[1.02] text-transparent sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+        <h1
+          className="hero-fade-up mt-6 whitespace-nowrap bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-3xl leading-[1.02] text-transparent sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+          style={{ animationDelay: "0.3s" }}
         >
           {t("name")}
-        </motion.h1>
+        </h1>
 
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-muted-foreground md:text-base"
+        <div
+          className="hero-fade-up mt-5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-muted-foreground md:text-base"
+          style={{ animationDelay: "0.4s" }}
         >
           {DISCIPLINES.map((d, i) => (
             <span key={d} className="flex items-center gap-2">
@@ -55,13 +49,11 @@ export function Hero() {
               {d}
             </span>
           ))}
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-10 flex flex-col items-center gap-3 sm:flex-row"
+        <div
+          className="hero-fade-up mt-10 flex flex-col items-center gap-3 sm:flex-row"
+          style={{ animationDelay: "0.5s" }}
         >
           <a
             href="#projects"
@@ -83,7 +75,7 @@ export function Hero() {
             <Mail className="mr-1.5 h-4 w-4" />
             {t("ctaContact")}
           </a>
-        </motion.div>
+        </div>
       </div>
     </InfiniteGrid>
   );

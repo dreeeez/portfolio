@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 
 import { GithubLink } from "@/components/shared/github-link";
@@ -51,10 +52,11 @@ export default async function UnboxideasPage({
             </dt>
             <dd className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-foreground">
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/python_logo.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Python
@@ -149,12 +151,13 @@ export default async function UnboxideasPage({
                     className="pointer-events-none absolute -inset-x-16 -inset-y-16 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.16),rgba(255,255,255,0.04)_45%,transparent_70%)] blur-2xl"
                   />
                   <GlowCard className="overflow-hidden rounded-3xl">
-                    <div className="aspect-[9/19] overflow-hidden rounded-3xl bg-neutral-950">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                    <div className="relative aspect-[9/19] overflow-hidden rounded-3xl bg-neutral-950">
+                      <Image
                         src={item.src}
                         alt={item.title}
-                        className="h-full w-full object-cover"
+                        fill
+                        sizes="(min-width: 1024px) 768px, 100vw"
+                        className="object-cover"
                       />
                     </div>
                   </GlowCard>
@@ -183,14 +186,15 @@ export default async function UnboxideasPage({
 
           <figure className="mt-4">
             <div className="overflow-hidden rounded-2xl border border-border/60 bg-neutral-950">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/thumbnails/unboxideas-architecture.png"
                 alt={
                   loc === "de"
                     ? "Systemarchitektur — Telegram, Static Site auf Vercel, Supabase Postgres mit Realtime"
                     : "System architecture — Telegram, static site on Vercel, Supabase Postgres with Realtime"
                 }
+                width={1146}
+                height={841}
                 className="block h-auto w-full object-contain"
               />
             </div>

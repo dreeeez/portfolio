@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight, Bot, CloudSun } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 
 import { GithubLink } from "@/components/shared/github-link";
@@ -51,28 +52,31 @@ export default async function JungscharManagerPage({
             </dt>
             <dd className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-foreground">
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/ts.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 TypeScript
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/nextjs.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Next.js
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/tailwind.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Tailwind CSS
@@ -82,19 +86,21 @@ export default async function JungscharManagerPage({
                 Telegram Bot API
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/supabase.webp"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Supabase
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/vercel.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Vercel
@@ -204,12 +210,13 @@ export default async function JungscharManagerPage({
                     className="pointer-events-none absolute -inset-x-16 -inset-y-16 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.16),rgba(255,255,255,0.04)_45%,transparent_70%)] blur-2xl"
                   />
                   <GlowCard className="overflow-hidden rounded-3xl">
-                    <div className="aspect-[9/19] overflow-hidden rounded-3xl bg-neutral-950">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                    <div className="relative aspect-[9/19] overflow-hidden rounded-3xl bg-neutral-950">
+                      <Image
                         src={item.src}
                         alt={item.title}
-                        className="h-full w-full object-cover"
+                        fill
+                        sizes="(min-width: 1024px) 768px, 100vw"
+                        className="object-cover"
                       />
                     </div>
                   </GlowCard>
@@ -245,14 +252,15 @@ export default async function JungscharManagerPage({
 
           <figure className="mt-8">
             <div className="overflow-hidden rounded-2xl border border-border/60 bg-neutral-950">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/thumbnails/jungschar-manager-architecture.png"
                 alt={
                   loc === "de"
                     ? "Systemarchitektur — Telegram, Next.js auf Vercel, Supabase und Open-Meteo"
                     : "System architecture — Telegram, Next.js on Vercel, Supabase and Open-Meteo"
                 }
+                width={1143}
+                height={759}
                 className="block h-auto w-full object-contain"
               />
             </div>

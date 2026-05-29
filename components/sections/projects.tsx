@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Film, ImageIcon } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -56,9 +57,11 @@ export function Projects() {
               <CategoryDivider
                 label={categoryLabels.software}
                 icon={
-                  <img
+                  <Image
                     src="/logos/github_weiss.webp"
                     alt="GitHub"
+                    width={20}
+                    height={20}
                     className="h-5 w-5 object-contain"
                   />
                 }
@@ -69,10 +72,11 @@ export function Projects() {
                   rel="noopener"
                   className="group inline-flex items-center gap-3 rounded-full border border-border/60 bg-card/40 py-1.5 pl-1.5 pr-4 text-sm transition-colors hover:border-border hover:bg-card/70"
                 >
-                  <img
+                  <Image
                     src={GITHUB_PROFILE.avatar}
                     alt={`${GITHUB_PROFILE.handle} avatar`}
-                    loading="lazy"
+                    width={32}
+                    height={32}
                     className="h-8 w-8 rounded-full"
                   />
                   <span className="font-sans font-medium not-italic text-foreground">
@@ -83,9 +87,11 @@ export function Projects() {
                       ? "Alle Repos auf GitHub"
                       : "All repos on GitHub"}
                   </span>
-                  <img
+                  <Image
                     src="/logos/github_weiss.webp"
                     alt="GitHub"
+                    width={16}
+                    height={16}
                     className="h-4 w-4 object-contain opacity-70 transition-opacity group-hover:opacity-100"
                   />
                 </a>
@@ -109,9 +115,11 @@ export function Projects() {
                     label={categoryLabels[category]}
                     icon={
                       category === "animation" ? (
-                        <img
+                        <Image
                           src="/logos/unreal_white.webp"
                           alt="Unreal Engine"
+                          width={20}
+                          height={20}
                           className="h-5 w-5 object-contain"
                         />
                       ) : category === "media" ? (

@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight, Bot } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 
 import { GithubLink } from "@/components/shared/github-link";
@@ -51,28 +52,31 @@ export default async function PutzmanagerPage({
             </dt>
             <dd className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-foreground">
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/nextjs.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Next.js
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/tailwind.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Tailwind CSS
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/supabase.webp"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Supabase
@@ -82,10 +86,11 @@ export default async function PutzmanagerPage({
                 Telegram Bot API
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/vercel.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 Vercel
@@ -209,14 +214,17 @@ export default async function PutzmanagerPage({
                     />
                     <GlowCard className="overflow-hidden rounded-2xl">
                       <div
-                        className={`aspect-[16/10] overflow-hidden rounded-2xl bg-neutral-950 ${item.aspect}`}
+                        className={`relative aspect-[16/10] overflow-hidden rounded-2xl bg-neutral-950 ${item.aspect}`}
                       >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={item.src}
-                          alt={item.title}
-                          className={`h-full w-full ${item.objectFit ?? "object-cover"} ${item.objectPos}`}
-                        />
+                        {item.src && (
+                          <Image
+                            src={item.src}
+                            alt={item.title}
+                            fill
+                            sizes="(min-width: 768px) 50vw, 100vw"
+                            className={`${item.objectFit ?? "object-cover"} ${item.objectPos}`}
+                          />
+                        )}
                       </div>
                     </GlowCard>
                   </div>
@@ -251,14 +259,15 @@ export default async function PutzmanagerPage({
 
           <figure className="mt-8">
             <div className="overflow-hidden rounded-2xl border border-border/60 bg-neutral-950">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/thumbnails/putzmanager-architecture.png"
                 alt={
                   loc === "de"
                     ? "Systemarchitektur — iCal, Next.js auf Vercel, Supabase und Telegram-Bot"
                     : "System architecture — iCal, Next.js on Vercel, Supabase and Telegram bot"
                 }
+                width={1126}
+                height={743}
                 className="block h-auto w-full object-contain"
               />
             </div>

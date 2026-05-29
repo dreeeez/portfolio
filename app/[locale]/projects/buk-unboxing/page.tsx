@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight, Braces } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 
 import { GithubLink } from "@/components/shared/github-link";
@@ -51,19 +52,21 @@ export default async function BukUnboxingPage({
             </dt>
             <dd className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-foreground">
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/html_logo.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 HTML5
               </span>
               <span className="inline-flex items-center gap-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/logos/css_logo.png"
                   alt=""
+                  width={16}
+                  height={16}
                   className="h-4 w-4 object-contain"
                 />
                 CSS3
@@ -155,12 +158,13 @@ export default async function BukUnboxingPage({
               <li key={item.src}>
                 <figure>
                   <GlowCard className="overflow-hidden rounded-2xl">
-                    <div className="aspect-[2/1] overflow-hidden rounded-2xl bg-neutral-950">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                    <div className="relative aspect-[2/1] overflow-hidden rounded-2xl bg-neutral-950">
+                      <Image
                         src={item.src}
                         alt={item.title}
-                        className="h-full w-full object-cover"
+                        fill
+                        sizes="(min-width: 1024px) 768px, 100vw"
+                        className="object-cover"
                       />
                     </div>
                   </GlowCard>
