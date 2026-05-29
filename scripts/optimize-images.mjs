@@ -81,12 +81,16 @@ async function resizeInPlace(rel, maxW, maxH) {
   const dest = path.join(ROOT, rel);
   const before = (await stat(dest)).size;
   const ext = path.extname(rel).toLowerCase();
-  let pipeline = sharp(src).resize({
-    width: maxW,
-    height: maxH,
-    fit: "inside",
-    withoutEnlargement: true,
-  });
+  // .rotate() with no args honors EXIF orientation before stripping metadata.
+  // Without it, phone/camera photos with non-default orientation come out sideways.
+  let pipeline = sharp(src)
+    .rotate()
+    .resize({
+      width: maxW,
+      height: maxH,
+      fit: "inside",
+      withoutEnlargement: true,
+    });
   if (ext === ".png") {
     pipeline = pipeline.png({ compressionLevel: 9, palette: true });
   } else if (ext === ".jpg" || ext === ".jpeg") {

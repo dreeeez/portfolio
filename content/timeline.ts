@@ -27,8 +27,8 @@ export const timeline: TimelineEntry[] = [
   {
     period: "Mar 2026 — present",
     title: {
-      en: "Working Student — Data Management",
-      de: "Werkstudent — Data Management",
+      en: "Intern — Data Management",
+      de: "Praktikant — Data Management",
     },
     org: "Mercedes-Benz AG",
     description: {
