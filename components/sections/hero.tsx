@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ArrowRight, Mail } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -83,12 +82,7 @@ export function Hero() {
 
 function PortraitAvatar({ alt }: { alt: string }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24, scale: 0.92 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className="relative"
-    >
+    <div className="relative">
       {/* soft ambient halo */}
       <div className="pointer-events-none absolute -inset-6 -z-10 rounded-full bg-gradient-to-br from-orange-500/35 via-primary/15 to-blue-500/35 opacity-90 blur-2xl dark:from-orange-500/25 dark:via-primary/10 dark:to-blue-500/25" />
 
@@ -101,6 +95,7 @@ function PortraitAvatar({ alt }: { alt: string }) {
             width={400}
             height={400}
             priority
+            fetchPriority="high"
             sizes="(min-width: 1536px) 18rem, (min-width: 1280px) 15rem, (min-width: 1024px) 13rem, (min-width: 768px) 11rem, 9rem"
             className="h-full w-full object-cover object-[center_28%]"
           />
@@ -114,6 +109,6 @@ function PortraitAvatar({ alt }: { alt: string }) {
       >
         <span className="absolute inset-0 animate-ping rounded-full bg-emerald-500/60" />
       </span>
-    </motion.div>
+    </div>
   );
 }
