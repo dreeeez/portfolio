@@ -47,6 +47,7 @@ export function About() {
                 alt={t("title")}
                 width={1024}
                 height={1024}
+                quality={68}
                 sizes="(min-width: 1024px) 26rem, 100vw"
                 className="aspect-square h-auto w-full object-cover"
               />

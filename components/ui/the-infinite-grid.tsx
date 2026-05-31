@@ -150,7 +150,7 @@ export function InfiniteGrid({
       {/* Cursor-revealed logo grid on hover devices; subtle static layer
           on touch devices (handled in globals.css via @media hover: none). */}
       <motion.div
-        className="cursor-mask pointer-events-none absolute inset-0 z-0 brightness-0 dark:invert dark:sepia dark:hue-rotate-[200deg] dark:saturate-[5] dark:opacity-30 dark:blur-[0.5px] dark:drop-shadow-[0_0_32px_rgba(37,99,235,1)]"
+        className="cursor-mask cursor-mask-logos pointer-events-none absolute inset-0 z-0 brightness-0 dark:invert dark:sepia dark:hue-rotate-[200deg] dark:saturate-[5] dark:opacity-30 dark:blur-[0.5px] dark:drop-shadow-[0_0_32px_rgba(37,99,235,1)]"
         style={{ maskImage, WebkitMaskImage: maskImage }}
       >
         <LogoPattern offsetX={offsetX} offsetY={offsetY} />
@@ -160,13 +160,7 @@ export function InfiniteGrid({
           so the headline and CTAs aren't crowded by logos/grid lines. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-[1] bg-background"
-        style={{
-          maskImage:
-            "radial-gradient(ellipse 30rem 22rem at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0.9) 70%, rgba(0,0,0,0.55) 84%, rgba(0,0,0,0.2) 94%, transparent 100%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 30rem 22rem at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0.9) 70%, rgba(0,0,0,0.55) 84%, rgba(0,0,0,0.2) 94%, transparent 100%)",
-        }}
+        className="hero-safezone pointer-events-none absolute inset-0 z-[1] bg-background"
       />
 
       {showOrbs && (

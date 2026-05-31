@@ -31,7 +31,7 @@ export function SiteFooter() {
             <GithubIcon className="h-4 w-4" />
           </a>
           <a
-            href="https://www.linkedin.com/in/marco-andres-schneider-8b9329289/"
+            href="https://www.linkedin.com/in/marco-andres-schneider/"
             target="_blank"
             rel="noopener"
             aria-label="LinkedIn"

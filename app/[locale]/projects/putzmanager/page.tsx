@@ -133,8 +133,8 @@ export default async function PutzmanagerPage({
             </h2>
             <p className="text-foreground/85">
               {loc === "de"
-                ? "In unserer Freikirche koordinieren mehrere Gruppen die Putzschichten für die Gemeinderäume — repetitive Prozesse, die immer gleich ablaufen, kann man gut automatisieren. Wer putzt diese Woche? Wer war letztes Mal Verantwortlicher? Wer ist gerade im Urlaub? Diese Fragen kommen jede Woche aufs Neue — und genau dafür ist Software gemacht. Wir starten jetzt mit einer Testphase und schauen, wie es im Alltag funktioniert."
-                : "At our free church, several groups coordinate the cleaning shifts for the community rooms — repetitive processes that always run the same way are a natural fit for automation. Who's cleaning this week? Who was responsible last time? Who's on vacation right now? These questions come up every week — and that's exactly what software is made for. We're kicking off a test phase now to see how it holds up in everyday use."}
+                ? "In unserer Freikirche koordinieren mehrere Gruppen die Putzschichten für die Gemeinderäume — repetitive Prozesse, die immer gleich ablaufen, kann man gut automatisieren. Wer putzt diese Woche? Wer war letztes Mal Verantwortlicher? Wer ist gerade im Urlaub? Diese Fragen kommen jede Woche aufs Neue — immer dieselbe Routine, die niemand mehr von Hand koordinieren sollte. Wir starten jetzt mit einer Testphase und schauen, wie es im Alltag funktioniert."
+                : "At our free church, several groups coordinate the cleaning shifts for the community rooms — repetitive processes that always run the same way are a natural fit for automation. Who's cleaning this week? Who was responsible last time? Who's on vacation right now? These questions come up every week — the same recurring routine no one should have to coordinate by hand. We're kicking off a test phase now to see how it holds up in everyday use."}
             </p>
           </section>
         </div>
@@ -199,8 +199,8 @@ export default async function PutzmanagerPage({
               title: loc === "de" ? "Auslieferung" : "Delivery",
               body:
                 loc === "de"
-                  ? "Reminder landet automatisch im Gruppen-Chat. Der Bot übernimmt — niemand muss Telegram pflegen."
-                  : "The reminder lands automatically in the group chat. The bot handles it — nobody manages Telegram.",
+                  ? "Reminder landet automatisch im Gruppen-Chat. Der Bot übernimmt die komplette Koordination — ganz ohne manuelles Nachhaken."
+                  : "The reminder lands automatically in the group chat. The bot handles the entire coordination — no manual chasing required.",
             },
           ].map((item, i) => {
             const num = String(i + 1).padStart(2, "0");

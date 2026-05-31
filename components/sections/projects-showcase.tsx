@@ -272,7 +272,7 @@ function StageInner({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="relative aspect-[16/11] w-full"
+        className="relative aspect-square w-full sm:aspect-[16/11]"
       >
         <StageMedia project={active} />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black from-25% via-black/70 via-55% to-transparent" />

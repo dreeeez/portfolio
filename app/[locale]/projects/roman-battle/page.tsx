@@ -104,8 +104,8 @@ export default async function RomanBattlePage({
         <div className="mt-8 max-w-2xl space-y-3 text-base leading-7">
           <p className="text-foreground/85">
             {loc === "de"
-              ? "Für unsere diesjährige Kinderfreizeit haben wir im Rahmen des Aktivitätstags einen Stationenlauf im Römer-Style vorbereitet. Damit die Kids in die Welt reinfinden, ist dazu eine kurze Animations-Geschichte in Unreal Engine 5 entstanden, die im Saal als Eröffnung gezeigt wurde."
-              : "For this year's kids' summer camp we put together a Roman-themed station course as part of our activity day. To set the scene, I built a short animated intro in Unreal Engine 5 that ran on the main stage before the kids headed out."}
+              ? "Für unsere jährliche Kinderfreizeit haben wir im Rahmen des Aktivitätstags einen Stationenlauf im Römer-Style vorbereitet. Damit die Kids in die Welt reinfinden, ist dazu eine kurze Animations-Geschichte in Unreal Engine 5 entstanden, die im Saal als Eröffnung gezeigt wurde."
+              : "For our annual kids' summer camp we put together a Roman-themed station course as part of our activity day. To set the scene, I built a short animated intro in Unreal Engine 5 that ran on the main stage before the kids headed out."}
           </p>
           <p className="text-muted-foreground">
             {loc === "de"

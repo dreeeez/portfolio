@@ -30,7 +30,7 @@ export function Hero() {
         </div>
 
         <h1
-          className="hero-fade-up mt-6 whitespace-nowrap bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-3xl leading-[1.02] text-transparent sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+          className="hero-rise mt-6 whitespace-nowrap bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-3xl leading-[1.02] text-transparent sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
           style={{ animationDelay: "0.3s" }}
         >
           {t("name")}

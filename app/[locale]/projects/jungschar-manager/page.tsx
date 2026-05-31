@@ -149,8 +149,8 @@ export default async function JungscharManagerPage({
             </h2>
             <p className="text-foreground/85">
               {loc === "de"
-                ? "Die wöchentliche Jungschar lebt von Koordination: Wer leitet, wer kocht, wer kommt überhaupt? Vorher lief das über Telegram — alles händisch und jede Woche aufs Neue. Jemand musste daran denken, Nachrichten schicken, Antworten zusammensuchen, am Freitagabend noch hektisch klären, ob das Essen organisiert ist. Der Bot übernimmt diese wiederkehrenden Abstimmungen vollständig: Reminder kommen pünktlich, Zu- und Absagen sind sichtbar, Geburtstage und Wetter sind automatisch dabei. Das Leitungsteam muss nichts mehr im Kopf behalten — die Standardprozesse laufen von selbst."
-                : "The weekly youth group runs on coordination: who's leading, who's cooking, who's even showing up? Before, all of that happened in Telegram — manually, every single week. Someone had to remember, send the messages, collect the answers, and on Friday evening still scramble to figure out whether dinner was sorted. The bot takes over these recurring agreements completely: reminders arrive on time, RSVPs are visible, birthdays and weather show up automatically. The leadership team doesn't have to keep anything in their head anymore — the standard processes run on their own."}
+                ? "Die wöchentliche Jungschar lebt von Koordination: Wer leitet, wer kocht, wer kommt überhaupt? Das Ganze läuft nach wie vor über Telegram — früher komplett händisch und jede Woche aufs Neue. Jemand musste daran denken, Nachrichten schicken, Antworten zusammensuchen, am Freitagabend noch hektisch klären, ob das Essen organisiert ist. Jetzt übernimmt der Bot diese wiederkehrenden Abstimmungen direkt im selben Telegram-Chat: Reminder kommen pünktlich, Zu- und Absagen sind sichtbar, Geburtstage und Wetter sind automatisch dabei. Das Leitungsteam muss nichts mehr im Kopf behalten — die Standardprozesse laufen von selbst."
+                : "The weekly youth group runs on coordination: who's leading, who's cooking, who's even showing up? It all still runs through Telegram — previously entirely by hand, every single week. Someone had to remember, send the messages, collect the answers, and on Friday evening still scramble to figure out whether dinner was sorted. Now the bot takes over these recurring agreements right in the same Telegram chat: reminders arrive on time, RSVPs are visible, birthdays and weather show up automatically. The leadership team doesn't have to keep anything in their head anymore — the standard processes run on their own."}
             </p>
           </section>
 
@@ -167,8 +167,8 @@ export default async function JungscharManagerPage({
               title: loc === "de" ? "Admin-Übersicht" : "Admin overview",
               body:
                 loc === "de"
-                  ? "Der Einstieg in die Mini-App. Helfer, Kalender, Eltern, Kinder, Archiv und Einstellungen — jeder Bereich klar getrennt, ein Tap entfernt. Bewusst reduziert, damit das Leitungsteam nicht erst suchen muss."
-                  : "The entry into the mini app. Helpers, calendar, parents, kids, archive and settings — every section clearly separated, one tap away. Deliberately reduced so the leadership team doesn't have to hunt for anything.",
+                  ? "Der Einstieg in die Mini-App. Helfer, Kalender, Eltern, Kinder, Archiv und Einstellungen — jeder Bereich klar getrennt, ein Tap entfernt."
+                  : "The entry into the mini app. Helpers, calendar, parents, kids, archive and settings — every section clearly separated, one tap away.",
             },
             {
               src: "/thumbnails/jungschar-manager-2.png",
@@ -191,8 +191,8 @@ export default async function JungscharManagerPage({
               title: loc === "de" ? "Archiv & Reflexion" : "Archive & reflection",
               body:
                 loc === "de"
-                  ? "Vergangene Termine bleiben einsehbar — wer war dabei, wer hat geleitet, wie wurde der Abend bewertet. Daraus entsteht über die Zeit ein Bild davon, was funktioniert und was nicht."
-                  : "Past dates stay accessible — who joined, who led, how the evening was rated. Over time this builds a picture of what works and what doesn't.",
+                  ? "Vergangene Termine bleiben einsehbar — wer war dabei, wer hat geleitet, wie wurde der Abend bewertet. So entsteht über die Zeit eine Datenbasis, aus der sich gezielt ablesen lässt, was gut ankam und sich wieder lohnt — eine Grundlage, um künftige Abende fundiert zu empfehlen und zu planen."
+                  : "Past dates stay accessible — who joined, who led, how the evening was rated. Over time this builds up a dataset that shows exactly what landed well and is worth doing again — a basis for recommending and planning future evenings with confidence.",
             },
           ].map((item, i) => {
             const reverse = i % 2 === 1;

@@ -39,12 +39,13 @@ export function Contact() {
                   {t("emailButton")}
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/marco-andres-schneider-8b9329289/"
+                  href="https://www.linkedin.com/in/marco-andres-schneider/"
                   target="_blank"
                   rel="noopener"
                   className={cn(
                     buttonVariants({ size: "lg", variant: "outline" }),
-                    "h-11 rounded-full border-border/60 bg-card/40 px-6 text-base backdrop-blur-sm",
+                    "h-11 rounded-full border-border/60 px-6 text-base backdrop-blur-sm",
+                    "bg-muted text-foreground dark:bg-input/50 sm:bg-card/40 dark:sm:bg-card/40",
                   )}
                 >
                   <LinkedinIcon className="mr-1.5 h-4 w-4" />
@@ -57,7 +58,8 @@ export function Contact() {
                   download="Marco-Andres-Schneider-Lebenslauf.pdf"
                   className={cn(
                     buttonVariants({ size: "lg", variant: "outline" }),
-                    "h-11 rounded-full border-border/60 bg-card/40 px-6 text-base backdrop-blur-sm",
+                    "h-11 rounded-full border-border/60 px-6 text-base backdrop-blur-sm",
+                    "bg-muted text-foreground dark:bg-input/50 sm:bg-card/40 dark:sm:bg-card/40",
                   )}
                 >
                   <Download className="mr-1.5 h-4 w-4" />
