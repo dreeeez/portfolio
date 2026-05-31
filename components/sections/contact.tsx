@@ -51,10 +51,10 @@ export function Contact() {
                   {t("linkedinButton")}
                 </a>
                 <a
-                  href="/cv.pdf"
+                  href="/Marco-Andres-Schneider-Lebenslauf.pdf"
                   target="_blank"
                   rel="noopener"
-                  download="Marco-Schneider-CV.pdf"
+                  download="Marco-Andres-Schneider-Lebenslauf.pdf"
                   className={cn(
                     buttonVariants({ size: "lg", variant: "outline" }),
                     "h-11 rounded-full border-border/60 bg-card/40 px-6 text-base backdrop-blur-sm",
