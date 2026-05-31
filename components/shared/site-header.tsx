@@ -72,6 +72,7 @@ export function SiteHeader() {
             href="/cv.pdf"
             target="_blank"
             rel="noopener"
+            download="Marco-Schneider-CV.pdf"
             className="ml-1 rounded-md border border-border/60 bg-card/40 px-3 py-2 text-sm font-medium text-foreground transition-colors hover:border-border hover:bg-accent/50"
           >
             {t("resume")}
