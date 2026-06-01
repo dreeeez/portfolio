@@ -202,12 +202,17 @@ function CategoryDivider({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="mb-8 flex items-center gap-3">
-      {icon}
-      <h3 className="font-sans text-xs font-medium uppercase tracking-[0.22em] not-italic text-muted-foreground">
-        {label}
-      </h3>
-      <div className="h-px flex-1 bg-border/60" />
+    <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-3">
+      {/* On mobile this inner row keeps the icon, label and rule together and
+          drops the GitHub pill to its own line below; on sm+ it unwraps
+          (display: contents) so everything sits on a single row as before. */}
+      <div className="flex items-center gap-3 sm:contents">
+        {icon}
+        <h3 className="font-sans text-xs font-medium uppercase tracking-[0.22em] not-italic text-muted-foreground">
+          {label}
+        </h3>
+        <div className="h-px flex-1 bg-border/60" />
+      </div>
       {children}
     </div>
   );
