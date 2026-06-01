@@ -202,7 +202,9 @@ export default async function CharacterAnimationPage({
 
         <figure className="mt-8">
           <figcaption className="mb-3 font-sans text-xs uppercase tracking-[0.18em] not-italic text-muted-foreground">
-            {loc === "de" ? "UE5 Cinematic" : "UE5 cinematic"}
+            {loc === "de"
+              ? "Bumper — Übergang zwischen den Phasen"
+              : "Bumper — transition between phases"}
           </figcaption>
           <div className="overflow-hidden rounded-2xl border border-border/60 bg-black">
             <video
