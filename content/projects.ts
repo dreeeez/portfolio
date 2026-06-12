@@ -261,6 +261,20 @@ export const projects: Project[] = [
     subpagePath: "/projects/graphics",
   },
   {
+    slug: "ecorize-messe-flyer-showcase",
+    category: "graphics",
+    title: "Hannover Messe Flyer — Showcase",
+    description: {
+      en: "Trade-fair flyer designed in InDesign for ecorize at Hannover Messe — staged mockup showing the front and back together on a dark backdrop.",
+      de: "Messe-Flyer, in InDesign für ecorize zur Hannover Messe gestaltet — inszeniertes Mockup, das Vorder- und Rückseite zusammen auf dunklem Hintergrund zeigt.",
+    },
+    tags: ["InDesign", "Flyer", "Hannover Messe"],
+    year: "2025",
+    image: "/graphics/ecorize-messe-flyer-showcase.jpg",
+    subpage: true,
+    subpagePath: "/projects/graphics",
+  },
+  {
     slug: "unboxing-poster",
     category: "graphics",
     title: "Unboxing — Main Award Poster",
