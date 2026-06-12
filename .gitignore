@@ -46,3 +46,6 @@ public/videos/*.mp4
 
 # original image sources kept locally as backup before resize
 public/_raw/
+
+# Claude Code local settings and worktrees
+.claude/
