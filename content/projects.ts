@@ -27,6 +27,10 @@ export type Project = {
   };
   subpage?: boolean;
   subpagePath?: string;
+  /** Hide this entry from the homepage projects grid (still shown on its subpage). */
+  hideFromHome?: boolean;
+  /** Hide this entry from its subpage (still shown as a card on the homepage). */
+  hideFromSubpage?: boolean;
 };
 
 export const projects: Project[] = [
@@ -245,6 +249,7 @@ export const projects: Project[] = [
     image: "/graphics/ecorize-messe-flyer-front.png",
     subpage: true,
     subpagePath: "/projects/graphics",
+    hideFromHome: true,
   },
   {
     slug: "ecorize-messe-flyer-back",
@@ -259,6 +264,7 @@ export const projects: Project[] = [
     image: "/graphics/ecorize-messe-flyer-back.png",
     subpage: true,
     subpagePath: "/projects/graphics",
+    hideFromHome: true,
   },
   {
     slug: "ecorize-messe-flyer-showcase",
@@ -273,6 +279,22 @@ export const projects: Project[] = [
     image: "/graphics/ecorize-messe-flyer-showcase.jpg",
     subpage: true,
     subpagePath: "/projects/graphics",
+    hideFromSubpage: true,
+  },
+  {
+    slug: "ecorize-website",
+    category: "graphics",
+    title: "ecorize Website",
+    description: {
+      en: "Web design concept for the ecorize ISO 50001 platform — landing page and product UI for workmanagement and reporting, designed in Figma.",
+      de: "Webdesign-Konzept für die ecorize ISO-50001-Plattform — Landingpage und Produkt-UI für Workmanagement & Reporting, gestaltet in Figma.",
+    },
+    tags: ["Figma", "Web Design", "UI/UX"],
+    year: "2025",
+    image: "/graphics/ecorize-website.jpg",
+    subpage: true,
+    subpagePath: "/projects/graphics",
+    hideFromSubpage: true,
   },
   {
     slug: "unboxing-poster",

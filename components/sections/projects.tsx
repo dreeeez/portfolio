@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { ProjectsShowcase } from "@/components/sections/projects-showcase";
 import { VideoCard } from "@/components/sections/video-card";
+import { GraphicsMarquee } from "@/components/sections/graphics-marquee";
 import { projects, type ProjectCategory } from "@/content/projects";
 
 const SHOWCASE_CATEGORIES: ProjectCategory[] = ["software", "data"];
@@ -32,7 +33,7 @@ export function Projects() {
 
   const gridGroups = GRID_CATEGORIES.map((category) => ({
     category,
-    items: projects.filter((p) => p.category === category),
+    items: projects.filter((p) => p.category === category && !p.hideFromHome),
   })).filter((g) => g.items.length > 0);
 
   const categoryLabels: Record<string, string> = {
@@ -131,7 +132,11 @@ export function Projects() {
                   />
                 </Reveal>
 
-                {category === "graphics" || category === "media" ? (
+                {category === "graphics" ? (
+                  <Reveal>
+                    <GraphicsMarquee items={items} locale={locale} />
+                  </Reveal>
+                ) : category === "media" ? (
                   <div className="-mx-4 sm:-mx-6 lg:-mx-8">
                     <div
                       className="flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-3 sm:px-6 lg:px-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -153,7 +158,7 @@ export function Projects() {
                               }
                               video={project.video}
                               image={project.image}
-                              fit={category === "graphics" ? "contain" : "cover"}
+                              fit="cover"
                             />
                           </div>
                         </Reveal>

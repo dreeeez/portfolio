@@ -206,6 +206,23 @@
       transform: translate3d(-1140px, -950px, 0);
     }
   }
+  /* Seamless horizontal marquee for the graphics row. The track holds two
+     identical copies of the cards (each card carries its own trailing margin,
+     so one copy = exactly 50% of the track). Translating by -50% lands on the
+     start of the second copy, making the loop seamless. The graphics instance
+     adds [animation-direction:reverse] to drift left→right. */
+  @keyframes marquee-x {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .marquee-track {
+    animation: marquee-x 55s linear infinite;
+    will-change: transform;
+  }
   .reveal {
     opacity: 0;
     transform: translateY(24px);
@@ -263,6 +280,15 @@
   @media (prefers-reduced-motion: reduce) {
     .cursor-mask-logos {
       animation: none !important;
+    }
+    /* Without motion the marquee would freeze at its start and hide the
+       off-screen cards. Stop the animation and let the row scroll so every
+       card stays reachable. */
+    .marquee-track {
+      animation: none !important;
+    }
+    .marquee-mask {
+      overflow-x: auto;
     }
   }
   /* Forces light-theme variables inside a single section, regardless of

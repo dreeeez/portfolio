@@ -23,6 +23,10 @@ type VideoCardProps = {
   };
   image?: string;
   fit?: "cover" | "contain";
+  /** Extra classes for the image, merged last so they override the fit defaults. */
+  imageClassName?: string;
+  /** Force the hovered look (used by the auto-glowing marquee for the centred card). */
+  active?: boolean;
 };
 
 export function VideoCard({
@@ -35,6 +39,8 @@ export function VideoCard({
   video,
   image,
   fit = "cover",
+  imageClassName,
+  active = false,
 }: VideoCardProps) {
   const videoRef = useVisibleVideo<HTMLVideoElement>();
   const [isHovered, setIsHovered] = React.useState(false);
@@ -54,6 +60,7 @@ export function VideoCard({
   return (
     <motion.div
       whileHover={{ scale: 1.015 }}
+      animate={{ scale: active ? 1.015 : 1 }}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -71,7 +78,7 @@ export function VideoCard({
             preload="none"
             className={cn(
               "absolute inset-0 h-full w-full object-cover transition-all duration-700",
-              isHovered
+              isHovered || active
                 ? "scale-105 opacity-90 brightness-100"
                 : "scale-100 opacity-60 brightness-75",
             )}
@@ -85,9 +92,10 @@ export function VideoCard({
             className={cn(
               "transition-all duration-700",
               fit === "contain" ? "object-contain object-top p-6" : "object-cover",
-              isHovered
+              isHovered || active
                 ? "scale-105 opacity-90 brightness-100"
                 : "scale-100 opacity-60 brightness-75",
+              imageClassName,
             )}
           />
         ) : (
@@ -101,7 +109,12 @@ export function VideoCard({
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10" />
 
         {hasLink && (
-          <div className="pointer-events-none absolute right-5 top-5 rounded-lg border border-white/20 bg-black/40 p-2 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+          <div
+            className={cn(
+              "pointer-events-none absolute right-5 top-5 rounded-lg border border-white/20 bg-black/40 p-2 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5",
+              active && "-translate-y-0.5 translate-x-0.5",
+            )}
+          >
             <ArrowUpRight className="h-4 w-4 text-white" />
           </div>
         )}

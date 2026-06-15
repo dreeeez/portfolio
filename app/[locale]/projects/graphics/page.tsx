@@ -8,11 +8,15 @@ import { projects } from "@/content/projects";
 
 const ecorizeItems = projects.filter(
   (p) =>
-    p.subpagePath === "/projects/graphics" && p.slug.startsWith("ecorize"),
+    p.subpagePath === "/projects/graphics" &&
+    p.slug.startsWith("ecorize") &&
+    !p.hideFromSubpage,
 );
 const otherItems = projects.filter(
   (p) =>
-    p.subpagePath === "/projects/graphics" && !p.slug.startsWith("ecorize"),
+    p.subpagePath === "/projects/graphics" &&
+    !p.slug.startsWith("ecorize") &&
+    !p.hideFromSubpage,
 );
 
 export const metadata: Metadata = {
