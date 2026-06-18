@@ -8,8 +8,6 @@ import { InfiniteGrid } from "@/components/ui/the-infinite-grid";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const DISCIPLINES = ["Software", "AI", "People", "Data", "UX/UI"];
-
 export function Hero() {
   const t = useTranslations("hero");
 
@@ -35,20 +33,6 @@ export function Hero() {
         >
           {t("name")}
         </h1>
-
-        <div
-          className="hero-fade-up mt-5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-muted-foreground md:text-base"
-          style={{ animationDelay: "0.4s" }}
-        >
-          {DISCIPLINES.map((d, i) => (
-            <span key={d} className="flex items-center gap-2">
-              {i > 0 && (
-                <span className="h-1 w-1 rounded-full bg-muted-foreground/40" />
-              )}
-              {d}
-            </span>
-          ))}
-        </div>
 
         <div
           className="hero-fade-up mt-10 flex flex-col items-center gap-3 sm:flex-row"

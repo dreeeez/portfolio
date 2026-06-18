@@ -238,7 +238,7 @@ export function ProjectsShowcase({ projects, locale }: ShowcaseProps) {
       {active.subpage ? (
         <Link
           href={`/projects/${active.slug}`}
-          className="group relative order-1 block overflow-hidden rounded-2xl border border-border/60 bg-card/30 transition-colors hover:border-border lg:order-2"
+          className="group relative order-1 block overflow-hidden rounded-2xl border border-border/60 bg-card/30 transition-all duration-300 hover:-translate-y-1 hover:border-border hover:shadow-2xl hover:shadow-black/30 lg:order-2"
         >
           <StageInner active={active} locale={locale} />
         </Link>
@@ -278,8 +278,8 @@ function StageInner({
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black from-25% via-black/70 via-55% to-transparent" />
 
         {active.subpage && (
-          <div className="pointer-events-none absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/50 px-3 py-1 font-sans text-[11px] not-italic text-white/80 backdrop-blur-md transition-colors group-hover:bg-black/70">
-            {locale === "de" ? "Details" : "Details"}
+          <div className="pointer-events-none absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-white/20 px-3 py-1 font-sans text-[11px] font-medium not-italic backdrop-blur-md transition-colors bg-black/50 text-white/80 group-hover:border-white/40 group-hover:bg-white group-hover:text-black">
+            {locale === "de" ? "Projekt ansehen" : "View project"}
             <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </div>
         )}

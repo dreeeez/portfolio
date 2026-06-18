@@ -79,9 +79,9 @@ export function GraphicsMarquee({
   return (
     <div
       ref={containerRef}
-      className="marquee-mask group relative -mx-4 overflow-hidden sm:-mx-6 lg:-mx-8 [-webkit-mask-image:linear-gradient(to_right,transparent,#000_5%,#000_95%,transparent)] [mask-image:linear-gradient(to_right,transparent,#000_5%,#000_95%,transparent)]"
+      className="marquee-mask relative -mx-4 overflow-hidden sm:-mx-6 lg:-mx-8 [-webkit-mask-image:linear-gradient(to_right,transparent,#000_5%,#000_95%,transparent)] [mask-image:linear-gradient(to_right,transparent,#000_5%,#000_95%,transparent)]"
     >
-      <div className="marquee-track flex w-max [animation-direction:reverse] group-hover:[animation-play-state:paused]">
+      <div className="marquee-track flex w-max [animation-direction:reverse]">
         {doubled.map((project, i) => (
           <div
             key={`${project.slug}-${i}`}
