@@ -4,6 +4,7 @@ import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
+import { ZoomableImage } from "@/components/sections/zoomable-image";
 import { projects } from "@/content/projects";
 
 const ecorizeItems = projects.filter(
@@ -88,6 +89,16 @@ export default async function GraphicsPage({
                 />
                 Photoshop
               </span>
+              <span className="inline-flex items-center gap-2">
+                <Image
+                  src="/logos/google-flow.png"
+                  alt=""
+                  width={16}
+                  height={16}
+                  className="h-4 w-4 object-contain"
+                />
+                Google Flow
+              </span>
             </dd>
           </div>
 
@@ -135,12 +146,15 @@ export default async function GraphicsPage({
               <figure key={item.slug}>
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border/60 bg-card/30">
                   {item.image && (
-                    <Image
+                    <ZoomableImage
                       src={item.image}
                       alt={item.title}
                       fill
                       sizes="(min-width: 640px) 50vw, 100vw"
-                      className="object-contain p-4"
+                      className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.02]"
+                      buttonClassName="absolute inset-0"
+                      zoomLabel={loc === "de" ? "Vergrößern" : "Enlarge"}
+                      closeLabel={loc === "de" ? "Schließen" : "Close"}
                     />
                   )}
                 </div>
@@ -168,15 +182,10 @@ export default async function GraphicsPage({
               Draft
             </span>
           </div>
-          <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
-            {loc === "de"
-              ? "UX/UI-Entwurf für eine ecorize-Heropage rund um Workmanagement & Reporting — interner Design-Draft, nicht in Produktion."
-              : "UX/UI draft for an ecorize hero page around workmanagement and reporting — internal design draft, not in production."}
-          </p>
 
-          <figure className="mt-6">
+          <figure className="mt-6 max-w-md">
             <div className="overflow-hidden rounded-xl border border-border/60 bg-card/30">
-              <Image
+              <ZoomableImage
                 src="/graphics/ecorize-heropage.png"
                 alt={
                   loc === "de"
@@ -185,8 +194,10 @@ export default async function GraphicsPage({
                 }
                 width={1698}
                 height={902}
-                loading="lazy"
-                className="h-auto w-full object-contain"
+                className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                buttonClassName="relative block w-full"
+                zoomLabel={loc === "de" ? "Vergrößern" : "Enlarge"}
+                closeLabel={loc === "de" ? "Schließen" : "Close"}
               />
             </div>
             <figcaption className="mt-3">
@@ -201,6 +212,11 @@ export default async function GraphicsPage({
             </figcaption>
           </figure>
         </section>
+
+        <div
+          aria-hidden
+          className="mt-14 h-px w-full bg-gradient-to-r from-transparent via-border/60 to-transparent"
+        />
 
         <section className="mt-14">
           <div className="max-w-2xl">
@@ -219,13 +235,15 @@ export default async function GraphicsPage({
               <figure key={item.slug}>
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border/60 bg-card/30">
                   {item.image && (
-                    <Image
+                    <ZoomableImage
                       src={item.image}
                       alt={item.title}
                       fill
                       sizes="(min-width: 640px) 50vw, 100vw"
-                      loading="lazy"
-                      className="object-contain p-4"
+                      className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.02]"
+                      buttonClassName="absolute inset-0"
+                      zoomLabel={loc === "de" ? "Vergrößern" : "Enlarge"}
+                      closeLabel={loc === "de" ? "Schließen" : "Close"}
                     />
                   )}
                 </div>
