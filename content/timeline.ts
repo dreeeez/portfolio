@@ -25,7 +25,21 @@ export type TimelineEntry = {
 
 export const timeline: TimelineEntry[] = [
   {
-    period: "Mar 2026 — present",
+    period: "Sep 2026 — present",
+    title: {
+      en: "Working Student — Data & Backend",
+      de: "Werkstudent — Data & Backend",
+    },
+    org: "VECTOR Informatik",
+    description: {
+      en: "Working student role in Data & Backend at Vector Informatik, alongside my Business Informatics studies.",
+      de: "Werkstudententätigkeit im Bereich Data & Backend bei Vector Informatik, parallel zum Wirtschaftsinformatik-Studium.",
+    },
+    icon: "data",
+    accent: "sky",
+  },
+  {
+    period: "Mar — Aug 2026",
     title: {
       en: "Intern — Data Management",
       de: "Praktikant — Data Management",
@@ -36,7 +50,7 @@ export const timeline: TimelineEntry[] = [
       de: "Datenqualitäts-Management im Powertrain (MB Operations), Databricks-ETL-Pipelines mit PySpark, AI Enablement (Claude Code, MCP, Plugin-Entwicklung), PowerBI-Monitoring und Vorantreiben der Prozessdigitalisierung. Internationale Zusammenarbeit mit Entwicklungsteams.",
     },
     icon: "data",
-    accent: "sky",
+    accent: "cyan",
   },
   {
     period: "2024 — present",

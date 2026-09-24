@@ -2,7 +2,7 @@
 
 ![Portfolio cover](docs/cover.jpg)
 
-Personal portfolio site of Marco Schneider — Business Informatics student at HdM Stuttgart and Working Student in Data Management at Mercedes-Benz.
+Personal portfolio site of Marco Schneider — Business Informatics student at HdM Stuttgart and Working Student in Data & Backend at Vector Informatik.
 
 **Live:** [marcoandres.dev](https://marcoandres.dev)
 
